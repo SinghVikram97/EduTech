@@ -1,0 +1,121 @@
+<div id="mainContent">
+    <h1>SALES</h1>
+    <div id="wrapper" class="mt-4">
+        <div id="tableContainer">
+            <table cellpadding="30">
+                <tr>
+                    <th>
+                        Serial No
+                    </th>
+                    <th>
+                        Item code
+                    </th>
+                    <th>
+                        Item Name
+                    </th>
+                    <th>Unit Price
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                </tr>
+                {{#each products}}
+                <tr>
+                    <td>{{@index}}</td>
+                    <td>{{this.itemcode}}</td>
+                    <td>{{this.itemname}}</td>
+                    <td>{{this.unitprice}}</td>
+                    <td>{{this.quantity}}</td>
+                    <td>{{this.price}}</td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+        <br>
+       <button type="button" id="addBtn" class="btn btn-outline-dark" data-toggle="modal" data-target="#addModal">
+           Add
+       </button>
+        <button type="button" id="deleteBtn" class="btn btn-outline-dark" data-toggle="modal" data-target="#deleteModal">
+            Delete
+        </button>
+        <button type="button" id="upBtn" class="btn btn-outline-dark" data-toggle="modal" data-target="#updateModal">
+            Update
+        </button>
+    </div>
+
+    <!-- Modal for adding item -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Add item</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        Item Code: &nbsp;  <input type="number" id="itemCode"> <br> <br>
+                        Item Name: <input type="text" id="itemName"> <br> <br>
+                        Unit price: &nbsp; &nbsp;<input id="unitPrice" type="number"> <br> <br>
+                        Quantity: &nbsp; &nbsp; &nbsp;<input id="quantity" type="number">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="saveBtn" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Delete Item</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span>Enter the Item Code of item to delete</span>
+                    <form action="">
+                        Item Code: &nbsp;  <input type="number" id="deleteItemCode"> <br> <br>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="saveDeleteBtn" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Update Item</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span>Enter details of Item to update</span><br>
+                    <form action="">
+                        Item Code: &nbsp;  <input type="number" id="itemCodeU"> <br> <br>
+                        Item Name: <input type="text" id="itemNameU"> <br> <br>
+                        Unit price: &nbsp; &nbsp;<input id="unitPriceU" type="number"> <br> <br>
+                        Quantity: &nbsp; &nbsp; &nbsp;<input id="quantityU" type="number">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="updateBtn" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
